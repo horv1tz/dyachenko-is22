@@ -1,3 +1,7 @@
+"""
+Составить генератор (yield), который преобразует все буквенные символы в
+заглавные
+"""
 def to_uppercase_generator(input_string):
     for char in input_string:
         if char.isalpha():
