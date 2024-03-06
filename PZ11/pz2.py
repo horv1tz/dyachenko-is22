@@ -13,6 +13,7 @@ new_file_path = 'return.txt'
 # Чтение исходного файла 
 with open(source_file_path, 'r', encoding='utf-16') as file:
     text = file.read()
+    print('Содержимое: ' + text)
 
 # Подсчет количества буквенных символов
 letter_count = sum(c.isalpha() for c in text)
