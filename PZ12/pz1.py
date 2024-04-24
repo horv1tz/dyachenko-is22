@@ -12,5 +12,9 @@ def count_pairs_divisible_by_three(sequence):
     # Возвращаем количество таких пар
     return len(list(divisible_pairs))
 
+<<<<<<< HEAD
 sequence = [1, 3, 6, 4, 9, 8]
+=======
+sequence = [1, 3, 5, 4, 9, 8]
+>>>>>>> 347fb23cc562486b01bafd48880c188e972dafbd
 print(f"Количество пар, произведение которых делится на 3: {count_pairs_divisible_by_three(sequence)}")
