@@ -1,6 +1,12 @@
+"""
+В соответствии с номером варианта перейти по ссылке на прототип. Реализовать
+его в IDE PyCharm Community с применением пакета tk. Получить интерфейс максимально
+приближенный к оригиналу 
+https://i.pinimg.com/originals/73/c6/0d/73c60def8c55043f9fd27b370530a9cf.jpg
+"""
+
 import tkinter as tk
 from tkinter import ttk
-import ttkbootstrap as tb
 
 def submit():
     print("Form Submitted")
@@ -8,9 +14,10 @@ def submit():
 def cancel():
     root.destroy()
 
-# Создание главного окна с использованием ttkbootstrap
-root = tb.Window(themename="darkly")
+# Создание главного окна
+root = tk.Tk()
 root.title("Sign Up")
+# root.geometry("560x656")
 root.resizable(width=False, height=False)
 root.configure(bg='#e28406')
 
@@ -27,21 +34,21 @@ frame2.grid(row=1, column=0, columnspan=2, padx=0, pady=0, sticky='nsew')
 # First Name
 label_first_name = tk.Label(frame2, text="First Name", bg='#242446', fg='#e9e59b', font=('Arial', 12))
 label_first_name.grid(row=0, column=0, padx=10, pady=5, sticky='e')
-entry_first_name = ttk.Entry(frame2, width=30, font=('Arial', 12))
+entry_first_name = tk.Entry(frame2, width=30, font=('Arial', 12))
 entry_first_name.insert(0, "Enter First Name...")
 entry_first_name.grid(row=0, column=1, padx=10, pady=10, sticky='w')
 
 # Last Name
 label_last_name = tk.Label(frame2, text="Last Name", bg='#242446', fg='#e9e59b', font=('Arial', 12))
 label_last_name.grid(row=1, column=0, padx=10, pady=5, sticky='e')
-entry_last_name = ttk.Entry(frame2, width=30, font=('Arial', 12))
+entry_last_name = tk.Entry(frame2, width=30, font=('Arial', 12))
 entry_last_name.insert(0, "Enter Last Name...")
 entry_last_name.grid(row=1, column=1, padx=10, pady=5, sticky='w')
 
 # Screen Name
 label_screen_name = tk.Label(frame2, text="Screen Name", bg='#242446', fg='#e9e59b', font=('Arial', 12))
 label_screen_name.grid(row=2, column=0, padx=10, pady=5, sticky='e')
-entry_screen_name = ttk.Entry(frame2, width=30, font=('Arial', 12))
+entry_screen_name = tk.Entry(frame2, width=30, font=('Arial', 12))
 entry_screen_name.insert(0, "Enter Screen Name...")
 entry_screen_name.grid(row=2, column=1, padx=10, pady=5, sticky='w')
 
@@ -71,10 +78,9 @@ label_gender = tk.Label(frame2, text="Gender", bg='#242446', fg='#e9e59b', font=
 label_gender.grid(row=4, column=0, padx=10, pady=5, sticky='e')
 gender_frame = tk.Frame(frame2, bg='#242446')
 gender_frame.grid(row=4, column=1, columnspan=3, padx=5, pady=5, sticky='w')
-gender_var = tk.IntVar()
-male_rb = ttk.Radiobutton(gender_frame, text="Male", variable=gender_var, value=1, style='TButton')
+male_rb = tk.Radiobutton(gender_frame, text="Male", variable=tk.IntVar(), value=1, bg='#242446', fg='#e9e59b', font=('Arial', 12))
 male_rb.pack(side='left')
-female_rb = ttk.Radiobutton(gender_frame, text="Female", variable=gender_var, value=2, style='TButton')
+female_rb = tk.Radiobutton(gender_frame, text="Female", variable=tk.IntVar(), value=2, bg='#242446', fg='#e9e59b', font=('Arial', 12))
 female_rb.pack(side='left')
 
 # Country
@@ -87,27 +93,27 @@ country.grid(row=5, column=1, columnspan=3, padx=10, pady=5, sticky='w')
 # E-mail
 label_email = tk.Label(frame2, text="E-mail", bg='#242446', fg='#e9e59b', font=('Arial', 12))
 label_email.grid(row=6, column=0, padx=10, pady=5, sticky='e')
-entry_email = ttk.Entry(frame2, width=30, font=('Arial', 12))
+entry_email = tk.Entry(frame2, width=30, font=('Arial', 12))
 entry_email.insert(0, "Enter E-mail...")
 entry_email.grid(row=6, column=1, columnspan=3, padx=10, pady=5, sticky='w')
 
 # Phone
 label_phone = tk.Label(frame2, text="Phone", bg='#242446', fg='#e9e59b', font=('Arial', 12))
 label_phone.grid(row=7, column=0, padx=10, pady=5, sticky='e')
-entry_phone = ttk.Entry(frame2, width=30, font=('Arial', 12))
+entry_phone = tk.Entry(frame2, width=30, font=('Arial', 12))
 entry_phone.insert(0, "Enter Phone...")
 entry_phone.grid(row=7, column=1, columnspan=3, padx=10, pady=5, sticky='w')
 
 # Password
 label_password = tk.Label(frame2, text="Password", bg='#242446', fg='#e9e59b', font=('Arial', 12))
 label_password.grid(row=8, column=0, padx=10, pady=5, sticky='e')
-entry_password = ttk.Entry(frame2, width=30, font=('Arial', 12), show="*")
+entry_password = tk.Entry(frame2, width=30, font=('Arial', 12), show="*")
 entry_password.grid(row=8, column=1, columnspan=3, padx=10, pady=5, sticky='w')
 
 # Confirm Password
 label_confirm_password = tk.Label(frame2, text="Confirm Password", bg='#242446', fg='#e9e59b', font=('Arial', 12))
 label_confirm_password.grid(row=9, column=0, padx=10, pady=5, sticky='e')
-entry_confirm_password = ttk.Entry(frame2, width=30, font=('Arial', 12), show="*")
+entry_confirm_password = tk.Entry(frame2, width=30, font=('Arial', 12), show="*")
 entry_confirm_password.grid(row=9, column=1, columnspan=3, padx=10, pady=5, sticky='w')
 
 # Agreement Checkbutton
@@ -121,22 +127,16 @@ label_agree.grid(row=0, column=1, padx=10, pady=5, sticky='w')
 
 # Agreement Checkbutton
 agree_var = tk.IntVar()
-check_agree = ttk.Checkbutton(frame_agree, variable=agree_var)
+check_agree = tk.Checkbutton(frame_agree, variable=agree_var, bg='#242446')
 check_agree.grid(row=0, column=0, padx=5, pady=5, sticky='w')
+
 
 # Frame 3: Buttons
 frame3 = tk.Frame(root, bg='#e28406')
 frame3.grid(row=2, column=0, columnspan=2, sticky='ew')
-
-# Настройка стилей для кнопок
-style = ttk.Style()
-style.configure('TButton', font=('Arial', 14), padding=10, relief="flat")
-style.map('TButton', background=[('active', '#fc4c4c'), ('!active', '#55d237')],
-                     foreground=[('active', '#ffffff'), ('!active', '#ffffff')])
-
-cancel_button = ttk.Button(frame3, text="Cancel", command=cancel, style='TButton')
+cancel_button = tk.Button(frame3, text="Cancel", command=cancel, fg="#ffffff", bg='#fc4c4c', font=('Arial', 14), width=10)
 cancel_button.pack(side='right', padx=10, pady=10)
-submit_button = ttk.Button(frame3, text="Submit", command=submit, style='TButton')
+submit_button = tk.Button(frame3, text="Submit", command=submit, fg="#ffffff", bg='#55d237', font=('Arial', 14), width=10)
 submit_button.pack(side='right', padx=5, pady=10)
 
 root.mainloop()

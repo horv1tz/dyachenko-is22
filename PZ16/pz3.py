@@ -4,7 +4,6 @@
 Использовать модуль pickle для сериализации и десериализации объектов Python в
 бинарном формате.
 """
-
 import pickle
 
 class Person:
@@ -36,7 +35,7 @@ person3 = Person("Алексей", 40, "мужчина")
 # Сохраняем объекты в файл
 persons_list = [person1, person2, person3]
 save_def('persons.pkl', persons_list)
-fd
+
 # Загружаем объекты из файла
 loaded_persons = load_def('persons.pkl')
 
