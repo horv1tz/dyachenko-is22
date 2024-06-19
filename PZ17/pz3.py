@@ -12,9 +12,8 @@ try:
     os.makedirs('test/test1', exist_ok=True)
     
     # 3. Переместить файлы из ПЗ6 и ПЗ7
-    # Предположим, что файлы называются file1_PZ6.txt, file2_PZ6.txt и file_PZ7.txt
-    pz6_files = ['PZ6/file1_PZ6.txt', 'PZ6/file2_PZ6.txt']
-    pz7_file = 'PZ7/file_PZ7.txt'
+    pz6_files = ['PZ6/1.py', 'PZ6/2.py']
+    pz7_file = 'PZ7/1.py'
     
     for file in pz6_files:
         if os.path.exists(file):
