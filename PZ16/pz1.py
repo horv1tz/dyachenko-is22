@@ -12,6 +12,6 @@ class Person:
     def info(self):
         return f"name: {self.name}, age: {self.age}, gender: {self.gender}"
 
-# пример исgenderьзования
+# пример использования
 man = Person("Иван", 30, "мужчина")
 print(man.info())  # выводит "name: Иван, age: 30, gender: мужчина"
